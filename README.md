@@ -1,7 +1,3 @@
-# LINK to this app
-
-http://gabrieltcm.github.io/dashboard-app
-
 # ABOUT
 
 - This is a Todo Dashboard App with a login page
@@ -25,7 +21,6 @@ http://gabrieltcm.github.io/dashboard-app
   - Axios
   - Node-sass
   - React-router-dom
-  - gh-pages
 - Components are functional (react-hook)
 - SCSS is used for styling. Files can be located in "src/styles" folder
 
