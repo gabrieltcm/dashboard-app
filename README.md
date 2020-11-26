@@ -30,7 +30,7 @@
 
 # HOW TO USE THIS APP
 
-1. Key in ID
+1. Key in ID: 0cef28f57ac7ae75
 2. Name can be any name you want.
 3. Once inside:
    - the image is taken from the API
