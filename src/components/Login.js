@@ -30,22 +30,26 @@ export default function Login(props) {
   };
 
   return (
-    <div className={styles.card}>
-      <div className={styles.container}>
-        <h3>Login</h3>
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <p className={styles.loginHeader}>Login</p>
         <input
+          className={styles.id}
           type="text"
           value={ID}
           onChange={(e) => setID(e.target.value)}
-          placeholder="ID"
+          placeholder="Id"
         ></input>
         <input
+          className={styles.name}
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Name"
         ></input>
-        <button onClick={userAuth}>Login!</button>
+        <button className={styles.loginBtn} onClick={userAuth}>
+          Login
+        </button>
       </div>
     </div>
   );

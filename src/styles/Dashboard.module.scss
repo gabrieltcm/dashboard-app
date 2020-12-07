@@ -1,40 +1,229 @@
+// SCSS variables/mixins
+$smallFontColor: #7d949a;
+$bigFontColor: #527278;
+
+@mixin centering-contents {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+@mixin common-button-styling {
+  background-color: #5285ec;
+  border-radius: 4px;
+  color: white;
+  border: 0px solid;
+  text-align: center;
+}
+
+@mixin delete-complete-btn {
+  @include common-button-styling;
+  float: right;
+  font-size: 20px;
+  padding: 10px;
+  //top, right/left, bottom
+  margin: 0px 6px 0px;
+}
+
+//////////////////////////////////////////////////////////////
+.container {
+  position: relative;
+  background-color: #eef1f8;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.navbar {
+  z-index: 9999;
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  height: 100px;
+  width: 100%;
+  @media screen and (max-width: 600px) {
+    height: 80px;
+  }
+}
+
 .profilePic {
+  @include centering-contents;
+  left: 170px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  @media screen and (max-width: 600px) {
+    left: 60px;
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.welcomeName {
+  @include centering-contents;
+  left: 320px;
+  font-size: 20px;
+  color: $bigFontColor;
+  @media screen and (max-width: 600px) {
+    left: 170px;
+    font-size: 15px;
+  }
 }
 
 .logout {
-  position: absolute;
-  top: 10px;
-  right: 33%;
+  @include centering-contents;
+  right: 150px;
+  background: none;
+  border: 0px solid;
+  font-size: 20px;
+  color: $bigFontColor;
+  &:hover {
+    color: red;
+    font-size: 25px;
+    transition: all 300ms;
+    right: 140px;
+  }
+  @media screen and (max-width: 600px) {
+    right: -20px;
+    font-size: 15px;
+  }
 }
 
+.headingTask {
+  color: $bigFontColor;
+  position: absolute;
+  font-size: 20px;
+  top: 200px;
+  left: 135px;
+  @media screen and (max-width: 600px) {
+    left: 40px;
+  }
+}
+
+// "+ New Task" button in Dashboard
+.dashboardNewTaskBtn {
+  @include common-button-styling;
+  position: absolute;
+  top: 190px;
+  right: 195px;
+  height: 50px;
+  width: 130px;
+  font-weight: bold;
+  font-size: 15px;
+  &:hover {
+    background-color: #6598ff;
+    transition: all 500ms;
+  }
+  @media screen and (max-width: 600px) {
+    right: 20px;
+  }
+}
+
+/* Popup style //////////////////////////////////////////*/
+.popupBox {
+  z-index: 9999;
+  position: fixed;
+  background-color: #00000050;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  @include centering-contents;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  margin: 0 auto;
+  height: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.closeIcon {
+  content: "x";
+  cursor: pointer;
+  position: fixed;
+  right: calc(10% - 20px);
+  top: calc(70% - 100px);
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  &:hover {
+    color: red;
+    font-size: 25px;
+    transition: all 300ms;
+    top: calc(70% - 105px);
+  }
+  @media screen and (max-width: 450px) {
+    top: calc(100vh - 85vh - 100px);
+  }
+}
+
+.popUpHeader {
+  color: $bigFontColor;
+  font-weight: bold;
+}
+
+.newTaskInput {
+  height: 30px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 0px solid;
+  background-color: #eef1f8;
+}
+
+.popUpNewTaskBtn {
+  @include common-button-styling;
+  margin-top: 15px;
+  width: 255px;
+  height: 30px;
+  &:hover {
+    background-color: #6598ff;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+
 .todoList {
-  //background: #e8e8e8;
-  // width: 400px;
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  top: 350px;
+  left: 115px;
+  right: 180px;
   padding: 10px;
+  @media screen and (max-width: 600px) {
+    left: 30px;
+    right: 20px;
+  }
 }
 
 .todos {
-  background: #fff;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 20px;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 30px;
   padding: 3px 10px;
-}
-
-@mixin button-list {
-  position: absolute;
-  right: 33%;
+  margin-top: 10px;
 }
 
 .delete {
-  @include button-list;
+  @include delete-complete-btn;
+  &:hover {
+    background-color: red;
+    transition: all 400ms;
+  }
 }
 
 .complete {
-  @include button-list;
-  margin-right: 60px;
+  @include delete-complete-btn;
+  &:hover {
+    background-color: #6598ff;
+    transition: all 400ms;
+  }
 }
