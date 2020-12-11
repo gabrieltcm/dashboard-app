@@ -151,31 +151,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-// <div>
-//   <img
-//     className={styles.profilePic}
-//     src={`https://dev.teledirectasia.com:3092${img}`}
-//     alt="Profile Pic"
-//   />
-//   <button className={styles.logout} onClick={handleLogout}>
-//     Logout
-//   </button>
-//   <h4>Welcome {name}</h4>
-//   <h2>Dashboard</h2>
-//   <input
-//     type="text"
-//     placeholder="Task Name..."
-//     value={taskInput}
-//     onChange={(e) => {
-//       settaskInput(e.target.value);
-//     }}
-//   />
-//   <button onClick={addNewTask}>+ New Task</button>
-
-//   <div className={styles.todoList}>
-//     {tasks.map((element, index) => (
-//       <Tasks key={index} index={index} task={element} />
-//     ))}
-//   </div>
-// </div>

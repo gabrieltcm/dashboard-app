@@ -85,6 +85,10 @@ $bigFontColor: #527278;
   @media screen and (max-width: 600px) {
     right: -20px;
     font-size: 15px;
+    &:hover {
+      right: -25px;
+      font-size: 18px;
+    }
   }
 }
 
